@@ -7,7 +7,6 @@ import com.example.cars.repository.CarRepository;
 import io.swagger.annotations.ApiOperation; 
 
 import javax.validation.Valid;
-// import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
