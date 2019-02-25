@@ -50,8 +50,7 @@ public class CarController {
   public ResponseEntity<Car> getCarsById(@PathVariable(value = "id") Long carId)
       throws ResourceNotFoundException {
 
-    Car car = carRepository
-                .findById(carId)
+    Car car = carRepository.findById(carId)
                 .orElseThrow(() -> new ResourceNotFoundException("Car " + carId + " not found"));
     return ResponseEntity.ok().body(car);
   }
@@ -82,10 +81,9 @@ public class CarController {
       @PathVariable(value = "id") Long carId, @Valid @RequestBody Car carDetails)
       throws ResourceNotFoundException {
 
-    Car car =
-        carRepository
-            .findById(carId)
-            .orElseThrow(() -> new ResourceNotFoundException("Car " + carId + " not found"));
+    Car car = carRepository
+                .findById(carId)
+                .orElseThrow(() -> new ResourceNotFoundException("Car " + carId + " not found"));
 
     car.setCarName(carDetails.getCarName());
     car.setDoors(carDetails.getDoors());
@@ -104,10 +102,9 @@ public class CarController {
   @ApiOperation(value = "Handles the deletion of a single car by its id.", response = Car.class)
   @DeleteMapping("/car/{id}")    // DELETE Method for Delete operation
   public Map<String, Boolean> deleteCar(@PathVariable(value = "id") Long carId) throws Exception {
-    Car car =
-        carRepository
-            .findById(carId)
-            .orElseThrow(() -> new ResourceNotFoundException("Car " + carId + " not found"));
+    Car car = carRepository
+                .findById(carId)
+                .orElseThrow(() -> new ResourceNotFoundException("Car " + carId + " not found"));
 
     carRepository.delete(car);
     Map<String, Boolean> response = new HashMap<>();
