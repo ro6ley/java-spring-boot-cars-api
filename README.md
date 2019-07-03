@@ -2,7 +2,7 @@
 
 # A TDD Approach to Spring Boot APIs
 
-This repository contains the code for this [blogpost]() on [StackAbuse](https://stackabuse.com/).
+This repository contains the code for this [blogpost](https://stackabuse.com/test-driven-development-for-spring-boot-apis/) on [StackAbuse](https://stackabuse.com/).
 
 ## Getting Started
 
